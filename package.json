@@ -33,6 +33,7 @@
 		"prepare": "husky install"
 	},
 	"dependencies": {
+		"@astro-community/astro-embed-youtube": "^0.4.3",
 		"@astrojs/rss": "4.0.1",
 		"astro": "4.0.3"
 	},

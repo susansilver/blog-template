@@ -7,6 +7,9 @@ import MenuIcon from './icons/MenuIcon.astro'
 import Search from '@/components/Search'
 import TagIcon from './icons/TagIcon.astro'
 import ToggleTheme from './ToggleTheme.astro'
+import AboutIcon from './icons/AboutIcon.astro'
+import NewsletterIcon from './icons/NewsletterIcon.astro'
+import About from 'src/pages/about.astro'
 
 // ADD YOUR SOCIAL NETWORKS HERE
 const SOCIALNETWORKS = [
@@ -20,6 +23,8 @@ const SOCIALNETWORKS = [
 
 <header class='relative flex items-center h-12 font-semibold'>
 	<a class='text-lg mr-auto' href='/'>Home</a>
+	<a class='mx-3 flex items-center gap-1 text-lg md:text-base' href='/about'><AboutIcon /> About</a>
+	<a class='mx-3 flex items-center gap-1 text-lg' href='/subscribe'><NewsletterIcon /> Subscribe</a>
 
 	<div
 		id='astro-header-drawer'
@@ -34,16 +39,6 @@ const SOCIALNETWORKS = [
 				<HeaderLink href='/tags' class='flex items-center gap-1 text-2xl md:text-base'>
 					<TagIcon /> Tags
 				</HeaderLink>
-			</div>
-
-			<div class='flex justify-center items-center md:justify-end gap-3 md:p-0'>
-				{
-					SOCIALNETWORKS.map((network) => (
-						<HeaderLink class='' href={network.url} target='_blank' aria-label={network.name}>
-							<span>{<network.icon />} </span>
-						</HeaderLink>
-					))
-				}
 			</div>
 		</nav>
 	</div>

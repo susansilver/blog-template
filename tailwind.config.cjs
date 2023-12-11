@@ -10,7 +10,7 @@ module.exports = {
 				white: '#f8f9fa'
 			},
 			fontFamily: {
-				body: ['Manrope', ...defaultTheme.fontFamily.sans],
+				sans: ['Manrope', ...defaultTheme.fontFamily.sans],
 				display: ['Bebas', ...defaultTheme.fontFamily.sans]
 			},
 			gridTemplateColumns: {

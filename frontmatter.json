@@ -11,17 +11,17 @@
 	],
 	"frontMatter.taxonomy.contentTypes": [
 		{
-			"name": "default",
+			"name": "articles",
 			"pageBundle": false,
-			"previewPath": "'blog'",
+			"previewPath": null,
 			"filePrefix": null,
-			"clearEmpty": true,
+			"fileType": "mdx",
+			"template": "[[workspace]]/.frontmatter/templates/article.mdx",
 			"fields": [
 				{
 					"title": "Title",
 					"name": "title",
-					"type": "string",
-					"single": true
+					"type": "string"
 				},
 				{
 					"title": "Description",
@@ -30,16 +30,37 @@
 				},
 				{
 					"title": "Publishing date",
-					"name": "pubDate",
+					"name": "date",
 					"type": "datetime",
 					"default": "{{now}}",
 					"isPublishDate": true
 				},
 				{
 					"title": "Content preview",
+					"name": "preview",
+					"type": "image"
+				},
+				{
+					"title": "Is in draft",
+					"name": "draft",
+					"type": "draft"
+				},
+				{
+					"title": "Tags",
+					"name": "tags",
+					"type": "tags"
+				},
+				{
+					"title": "Categories",
+					"name": "categories",
+					"type": "choice",
+					"choices": ["Clips", "Cross Stitch", "Music", "Mental Helath"],
+					"default": "Clips"
+				},
+				{
+					"title": "heroImage",
 					"name": "heroImage",
-					"type": "image",
-					"isPreviewImage": true
+					"type": "image"
 				},
 				{
 					"title": "category",
@@ -47,16 +68,40 @@
 					"type": "categories"
 				},
 				{
-					"title": "draft",
-					"name": "draft",
-					"type": "draft"
+					"title": "pubDate",
+					"name": "pubDate",
+					"type": "datetime"
 				},
 				{
-					"title": "tags",
-					"name": "tags",
-					"type": "tags"
+					"title": "type",
+					"name": "type",
+					"type": "string"
 				}
 			]
 		}
-	]
+	],
+	"frontMatter.snippets.wrapper.enabled": false,
+	"frontMatter.content.snippets": {
+		"YouTube": {
+			"description": "Embed a YouTube Video",
+			"body": "<YouTube id=\"[[&selection]]\" />",
+			"fields": [
+				{
+					"name": "selection",
+					"title": "selection",
+					"type": "string",
+					"default": "FM_SELECTED_TEXT"
+				}
+			]
+		},
+		"Add image as avif": {
+			"description": "",
+			"body": [
+				"import [[title]] from '../../assets[[&mediaUrl]]';",
+				"",
+				"<Image src={[[title]]} alt=\"[[alt]]\" format=\"avif\" quality=\"mid\" />"
+			],
+			"isMediaSnippet": true
+		}
+	}
 }

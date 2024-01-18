@@ -54,7 +54,7 @@
 					"title": "Categories",
 					"name": "categories",
 					"type": "choice",
-					"choices": ["Clips", "Music", "Mental Helath"],
+					"choices": ["Clips", "Music", "Mental Helath", "Writing"],
 					"default": "Clips"
 				},
 				{

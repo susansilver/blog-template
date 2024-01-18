@@ -5,6 +5,6 @@ export const CATEGORIES = [
 	'Music',
 	'Cross Stitch',
 	'Finds',
-	'Blogging',
+	'Writing',
 	'Community'
 ] as const
